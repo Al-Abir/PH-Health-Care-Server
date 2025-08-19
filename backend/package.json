@@ -4,18 +4,22 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "build": "tsc", 
-   "start": "node dist/index.js",
-   "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts"
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "ts-node-dev --respawn --transpile-only ./src/index.ts"
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@types/pg": "^8.15.5",
+    "bcrypt": "^6.0.0",
     "cors": "^2.8.5",
     "dotenv": "^17.2.1",
-    "express": "^5.1.0"
+    "express": "^5.1.0",
+    "pg": "^8.16.3"
   },
   "devDependencies": {
+    "@types/bcrypt": "^6.0.0",
     "@types/cors": "^2.8.19",
     "@types/express": "^5.0.3",
     "@types/node": "^24.3.0",
