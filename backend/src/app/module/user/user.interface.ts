@@ -17,9 +17,9 @@ export interface IUser {
   id: number;
   email: string;
   password: string;
-  role: UserRole;
-  needPasswordChange: boolean;
-  status: UserStatus;
+  role?: UserRole; // optional
+  needPasswordChange?: boolean; // optional
+  status?: UserStatus; // optional
   created_at: Date;
   updated_at: Date;
 }
@@ -39,15 +39,5 @@ export interface IAdmin {
   updated_at: Date;
 }
 
-export interface IAdmin {
-  id: number;
-  name: string | null;
-  email: string;
-  portfolio_image?: string | null;
-  contact_number?: string | null;
-  isDeleted: boolean;
-  created_at: Date;
-  updated_at: Date;
-}
 
 export type INewAdmin = Omit<IAdmin, "id" | "created_at" | "updated_at">;
