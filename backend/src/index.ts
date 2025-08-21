@@ -4,6 +4,7 @@ import dotenv from 'dotenv';
 import pool from './confiq';
 import initDB from './initTABLE/initDB';
 import userRoutes from './app/module/user/user.router'
+import { searchQuery } from './app/module/Search_Sort_Pagination/Search.route';
 dotenv.config();
 
 const app = express();
@@ -40,6 +41,7 @@ app.get('/', async (req: Request, res: Response) => {
 
 //routes
 app.use('/api/v1/user',userRoutes)
+app.use('/api/v1',searchQuery)
 
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
