@@ -1,22 +1,18 @@
 import { NextFunction, Request, Response } from "express"
 import { AdminService } from "./Admin.service"
 import { Admin } from "./Admin.interface";
-import { updateAdminScheam } from "./Admin.zod.validation";
 import { sendResponse, sendResponse2 } from "../Shared/sendResponse";
 import { StatusCodes } from "http-status-codes";
+import catchAsync from "../Shared/catchAsync";
 
 
-const getAllDB = async (req:Request, res: Response)=>{
+const getAllDB = catchAsync(async (req:Request, res: Response)=>{
       
-    try {
         const result = await  AdminService.getAlldata();
 
-     sendResponse2(res, StatusCodes.OK, true, "all admin data faced...", result);
-        
-    } catch (error) {
-         console.log(error)
-    }
-}
+     sendResponse2(res, StatusCodes.OK, true, "all admin data faced...", result);    
+
+}) 
 
 const singleUser = async(req:Request, res: Response)=>{
       try {

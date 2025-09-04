@@ -22,6 +22,7 @@ const ErrorHandling = (
       errors: err.issues.map(issue => ({
         path: issue.path.join("."),
         message: issue.message,
+        err:err.name
       })),
     });
   }

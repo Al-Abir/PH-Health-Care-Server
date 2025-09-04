@@ -28,6 +28,7 @@ export const updateDataDB = async (
   data: Partial<Admin>
 ): Promise<Admin> => {
   // 1️⃣ Check if admin exists and is not soft-deleted
+  console.log("cheeker.........")
   const check = await pool.query(
     `SELECT * FROM admin WHERE id = $1 AND isdeleted = false`,
     [id]
